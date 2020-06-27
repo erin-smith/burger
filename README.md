@@ -1,2 +1,2 @@
 # burger
-HW #13: a MVC structured app where you can create and devour burgers (MySQL, Node, Express, Handlebars, ORM )
+HW #13: MVC structured app in which you create and devour burgers (MySQL, Node, Express, Handlebars, ORM)
