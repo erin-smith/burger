@@ -1,14 +1,14 @@
-var express = require("express");
+const express = require("express");
 
-var router = express.Router();
+const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
-var burgers = require("../models/burger.js");
+// Import the model (burger.js) to use its database functions.
+const burgers = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// ROUTES--- logic where required.
 router.get("/", function(req, res) {
   burgers.selectAll(function(data) {
-    var hbsObject = {
+    const hbsObject = {
      burgers: data
     };
     console.log(hbsObject);
@@ -18,13 +18,13 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
   burgers.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
-    // Send back the ID of the new quote
+    // Send back the ID of the new item
     res.json({ id: result.insertId });
   });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+ const condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 console.log("received: " + req.body.devoured);
