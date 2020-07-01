@@ -8,7 +8,7 @@
   height: 40vh; /* if you don't want it to take up the full screen, reduce this number */
   overflow: hidden;
   background-size: cover;
-  background: url(https://theresandiego.com/wp-content/uploads/burger4.jpeg) repeat center center scroll;
+  background: url(../img/burgertrio.jpg) repeat center center scroll;
 }
 
 h1 {
@@ -21,18 +21,11 @@ h1 {
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 270px !important;
 }
+
 li {
   padding: 5px;
   margin: 5px;
   background: goldenrod;
-  width: 300px;
-}
-
-ul {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  column-gap: 2rem;
 }
 
 .label {
@@ -43,12 +36,13 @@ ul {
   justify-content:flex-end;
   outline: 2px;
 }
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
+.create-form {
+  padding: 10px;
+  margin-top: 20px;
+  background:lightseagreen;
 }
 
 .form-group {
   margin-bottom: 5px;
+  margin-top: 15px;
 }

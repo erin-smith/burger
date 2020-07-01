@@ -1,11 +1,11 @@
-// Set up MySQL connection.
-var mysql = require("mysql");
+// Sets up MySQL connection.
+const mysql = require("mysql");
 const config = require(__dirname + '/../config/config.json');
 
-var connection = mysql.createConnection(config.development);
+const connection = mysql.createConnection(config.development);
 
-// Make connection.
-connection.connect(function(err) {
+// Makes a connection.
+connection.connect((err)=> {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
@@ -13,5 +13,5 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-// Export connection for our ORM to use.
+// Exports connection for ORM.
 module.exports = connection;

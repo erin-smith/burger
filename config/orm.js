@@ -1,93 +1,99 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+const connection = require("../config/connection.js");
 
-//build query syntax for SQL with (?,?) values
-function printQuestionMarks(num) {
-  var arr = [];
+//builds query syntax for SQL with (?,?) values
+function myQuestionmarks (howmany)
+{
+  const myArr = [];
 
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
+  for (var i = 0; i < howmany; i++) {
+    myArr.push("?");
   }
 
-  return arr.toString();
+  return myArr.toString();
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
-function objToSql(ob) {
-  var arr = [];
+//object to SQL syntax
+function convertToSql(myObj)
+{
+  const arrTwo = [];
 
   // loop through the keys and push the key/value as a string int arr
-  for (var key in ob) {
-    var value = ob[key];
+  for (let key in myObj) {
+    let value = myObj[key];
 
     // check to skip hidden properties
-    if (Object.hasOwnProperty.call(ob, key)) {
+    if (Object.hasOwnProperty.call(myObj, key)) {
 
       // if string with spaces, add quotations 
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
-      arr.push(key + "=" + value);
+      arrTwo.push(key + "=" + value);
     }
   }
 
-  // translate array of strings to a single comma-separated string
-  return arr.toString();
+  //array of strings --> single string with commas
+  return arrTwo.toString();
 }
 
 // Object for all our SQL statement functions.
-var orm = {
-  selectAll: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function(err, result) {
+const orm = {
+  selectAll: (tableInput, callback) =>
+  {
+    let queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, (err, res) =>
+    {
       if (err) {
         throw err;
       }
-      cb(result);
+      callback(res);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+  insertOne: (table, columns, values, callback) =>
+  {
+    let queryString = "INSERT INTO " + table;
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += columns.toString();
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
+    queryString += myQuestionmarks(values.length);
     queryString += ") ";
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, values, (err, res) =>
+    {
       if (err) {
         throw err;
       }
 
-      cb(result);
+      callback(res);
     });
   },
 
-  // An example of objColVals would be {name: blue cheese burger, to be eaten: true}
-  updateOne: function(table, objColVals, condition, cb) {
+  // Column data e.g. {name: blue cheese burger, to be eaten: true}
+  updateOne: (table, columnData, unEaten, callback) =>
+  {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += convertToSql(columnData);
     queryString += " WHERE ";
-    queryString += condition;
+    queryString += unEaten;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, (err, res) =>
+    {
       if (err) {
         throw err;
       }
 
-      cb(result);
+      callback(res);
     });
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object burger.js.
 module.exports = orm;
