@@ -1,19 +1,22 @@
+//require npm package: Express
 const express = require("express");
 
 const PORT = process.env.PORT || 3002;
 
 const app = express();
 
-// Serve static content for the app from the "public" directory in the application directory.
+// Serve static content from the "public" directory  
 app.use(express.static("public"));
 
 // Parse request body as JSON
+//MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars.
+// Set-up Handlebars.
 const exphbs = require("express-handlebars");
 
+//main as default html
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 

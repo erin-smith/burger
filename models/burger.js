@@ -7,7 +7,7 @@ const burgers = {
       callback(res);
     });
   },
-  // The variables cols and vals are arrays!!!
+  // Erin- Don't forget:  variables columns and valuess are arrays!
   insertOne:(columns, values, callback)=>{
     orm.insertOne("burgers", columns, values,(res)=> {
       callback(res);
@@ -16,9 +16,9 @@ const burgers = {
   updateOne: (columnData, condition, callback)=> {
     orm.updateOne("burgers", columnData, condition,(res)=> {
       callback(res);
-    });
-  }
-};
+    }
+    )}
+  };
 
 // Export the db functions for burgers_controller.js
 module.exports = burgers;

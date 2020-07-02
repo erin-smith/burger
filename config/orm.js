@@ -1,4 +1,4 @@
-// Import MySQL connection.
+// First, import MySQL connection.
 const connection = require("../config/connection.js");
 
 //builds query syntax for SQL with (?,?) values
@@ -14,7 +14,7 @@ function myQuestionmarks (howmany)
 }
 
 //object to SQL syntax
-function convertToSql(myObj)
+function convertToSql (myObj)
 {
   const arrTwo = [];
 
@@ -33,11 +33,11 @@ function convertToSql(myObj)
     }
   }
 
-  //array of strings --> single string with commas
+  //array of strings --> single string
   return arrTwo.toString();
 }
 
-// Object for all our SQL statement functions.
+// Object for SQL Methods that execute mySQL commands in controllers.
 const orm = {
   selectAll: (tableInput, callback) =>
   {
