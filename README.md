@@ -12,7 +12,6 @@ The app is a burger menu/builder/logger site created with MySQL, Node, Express, 
 
 [Link to Heroku](https://frozen-harbor-42097.herokuapp.com/)  
 
-[Link to project](https://erin-smith.github.io/burger/)  
 
 ![Screenshot of App](./public/assets/img/burgerShot.png)  
 
