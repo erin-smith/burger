@@ -10,8 +10,10 @@ Erin's Gourmet Burger Joint, or "burger", is a playful restaurant app that lets 
 
 The app is a burger menu/builder/logger site created with MySQL, Node, Express, Handlebars and an ORM. It follows the MVC design pattern, stores burgers in a database, and is deployed on Heroku!  Node and MySQL query the route data, and Handlebars generates the HTML.
 
-[Link to Heroku](https://frozen-harbor-42097.herokuapp.com/)
-[Link to project](https://erin-smith.github.io/burger/)
+[Link to Heroku](https://frozen-harbor-42097.herokuapp.com/)  
+
+[Link to project](https://erin-smith.github.io/burger/)  
+
 ![Screenshot of App](./public/assets/img/burgerShot.png)  
 
 
@@ -26,9 +28,12 @@ The app is a burger menu/builder/logger site created with MySQL, Node, Express, 
  
 ## Installation 
    
-No installation needed.  Simply go to the live links here:
-[Link to Heroku](https://frozen-harbor-42097.herokuapp.com/)
-[Link to Github](https://erin-smith.github.io/burger/)
+No installation needed.  Simply go to the live links here:  
+
+[Link to Heroku](https://frozen-harbor-42097.herokuapp.com/)  
+
+[Link to Github](https://erin-smith.github.io/burger/)  
+
 
   
 
@@ -49,8 +54,10 @@ To invoke the program, right click the server.js file, open the terminal and run
 Then navigate to the local host port notated in the console and watch the magic happen. 
 
 ## Usage 
-  Simply visit the link on Heroku to use.
-  [Link to project](https://frozen-harbor-42097.herokuapp.com/)
+  Simply visit the link on Heroku to use.  
+
+  [Link to project](https://frozen-harbor-42097.herokuapp.com/)  
+
   
   Erin's Gourmet Burger Joint, or "burger", displays a classy burger menu.  It's an app that lets users input the names of burgers they'd like to eat.  Whenever a user submits a burger's name, the app displays the burger name. The user can "Click to Devour" to inhale a delicious burger. They can "Click to Eat Again" if they want to move a buger back to the starter menu to make available again. 
 
@@ -75,7 +82,7 @@ Then navigate to the local host port notated in the console and watch the magic 
 
 ## Tests 
 
-  To run tests, I ran nodemon, --inspector, VSdebugger, used any console.logs, throw errors, validations, and checked the code via localhost/Chrome inpector, Github and Heroku functionality.
+  To run tests, I ran nodemon, --inspector, VSdebugger, used many console.logs, throw errors, validations, and checked the code via localhost/Chrome inpector, Github and Heroku functionality.
 
 ## Questions:  
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/erin-smith)  
