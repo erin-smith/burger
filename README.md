@@ -59,7 +59,7 @@ Then navigate to the local host port notated in the console and watch the magic 
   [Link to project](https://frozen-harbor-42097.herokuapp.com/)  
 
   
-  Erin's Gourmet Burger Joint, or "burger", displays a classy burger menu.  It's an app that lets users input the names of burgers they'd like to eat.  Whenever a user submits a burger's name, the app displays the burger name. The user can "Click to Devour" to inhale a delicious burger. They can "Click to Eat Again" if they want to move a buger back to the starter menu to make available again. 
+  Erin's Gourmet Burger Joint, or "burger", displays a classy burger menu.  It's an app that lets users input the names of burgers they'd like to eat.  Whenever a user submits a burger's name, the app displays the burger name. The user can "Click to Devour" and inhale a delicious burger. They can "Click to Eat Again" if they want to move a burger back to the starter menu to make available again. 
 
 ## License 
 [![ISClicense](https://img.shields.io/badge/license-ISC-blue.svg)](https://shields.io/)
