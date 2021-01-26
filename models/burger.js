@@ -7,7 +7,7 @@ const burgers = {
       callback(res);
     });
   },
-  // Erin- Don't forget:  variables columns and valuess are arrays!
+  // Erin- Don't forget:  variables columns and values are arrays!
   insertOne:(columns, values, callback)=>{
     orm.insertOne("burgers", columns, values,(res)=> {
       callback(res);
