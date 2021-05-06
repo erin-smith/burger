@@ -4,8 +4,8 @@ USE wdkvljkwji8f7wh3;
 
 CREATE TABLE burgers (
 	id INTEGER(11) NOT NULL AUTO_INCREMENT,
-    CONSTRAINT CHK_burger CHECK (burger_name <> ""),
-	burger_name VARCHAR(40) NOT NULL UNIQUE,
+    CONSTRAINT CHK_burger CHECK (burger_name <> ''), -- error
+	burger_name VARCHAR(40) NOT NULL UNIQUE,  -- error
 	devoured BOOLEAN DEFAULT false,
 	PRIMARY KEY(id)
 );

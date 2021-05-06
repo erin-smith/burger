@@ -39,9 +39,9 @@ function convertToSql (myObj)
 
 // Object for SQL Methods that execute mySQL commands in controllers.
 const orm = {
-  selectAll: (tableInput, callback) =>
+  selectAll: (burgers, callback) =>
   {
-    let queryString = "SELECT * FROM " + tableInput + ";";
+    let queryString = "SELECT * FROM burgers WHERE burger_name <>'' AND burger_name IS NOT NULL;";
     connection.query(queryString, (err, res) =>
     {
       if (err) {
