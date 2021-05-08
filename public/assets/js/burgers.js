@@ -31,6 +31,24 @@ $(function() {
       devoured: $("[burger_name=devoured]:checked").val()
     };
 
+    // if empty string error handling
+    if ((newBurger.burger_name === '') || (newBurger.burger_name.length < 2))
+    {
+      $("label#burErr").show();
+      $("#bur").focus();
+      return false;
+    }
+  
+    // //if duplicate entry error handling
+
+    // if(newBurger.burger_name === .burger_name)
+    // {
+    //   $("label#burErr").show();
+    //   $("#bur").focus();
+    //   return false;
+    // }
+    
+
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
@@ -41,5 +59,6 @@ $(function() {
         location.reload();
       }
     );
+
   });
 });

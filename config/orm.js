@@ -41,7 +41,7 @@ function convertToSql (myObj)
 const orm = {
   selectAll: (burgers, callback) =>
   {
-    let queryString = "SELECT * FROM burgers WHERE burger_name <>'' AND burger_name IS NOT NULL;";
+    let queryString = "SELECT * FROM burgers WHERE burger_name IS NOT NULL";
     connection.query(queryString, (err, res) =>
     {
       if (err) {
@@ -66,6 +66,7 @@ const orm = {
     connection.query(queryString, values, (err, res) =>
     {
       if (err) {
+        console.log("throwing error:", err)
         throw err;
       }
 
